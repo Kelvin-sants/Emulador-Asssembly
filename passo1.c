@@ -156,17 +156,5 @@ void traduzParaLinguagemDeMaquina(char** codigoAssembly, int* memoria){
             k += 4;          //avanca 4 casas na memoria
             i += 1;          //pega o proximo codigo em assembly
         }
-
-
-
-
-
-
     }
-
-
-
-
-
-
 }
