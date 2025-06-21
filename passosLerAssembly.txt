@@ -1,0 +1,3 @@
+ler a entrada do usuario tudo junto
+separar palavra por palavra
+pega cada palavra traduz pra linguagem de maquina e coloca na memoria
