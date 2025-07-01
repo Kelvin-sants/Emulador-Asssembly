@@ -203,7 +203,7 @@ void traduzParaLinguagemDeMaquina(char** codigoAssembly, int* memoria, int quant
         }
 
         else if (strcmp(palavra, "HALT") == 0) {
-            memoria[k] = 8;
+            memoria[k] = 7;
             memoria[k+1] = 0;
             memoria[k+2] = 0;
             memoria[k+3] = 0;

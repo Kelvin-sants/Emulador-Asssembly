@@ -47,7 +47,7 @@ int executarPrograma(int* memoria, int* registradores, int* PC, int* flagZero, i
                 continue;                                               // pula o incremento padrão
                 break;
 
-            case 8:  // HALT
+            case 7:  // HALT
                 continuar = FALSE;
                 break;  //Finalizada com sucesso
 

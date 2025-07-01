@@ -51,6 +51,7 @@ int main(){                 //APENAS PARA TESTES
         
         printf("\nO que voce deseja fazer:\t");
         scanf("%d", &opcaoMenuPrincipal);
+        entrada[0] = '\0';
 
         switch (opcaoMenuPrincipal)
         {
