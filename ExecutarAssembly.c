@@ -57,7 +57,7 @@ int decode(Instrucao* inst) {
             // Nenhum argumento a validar
             break;
         default:
-            printf("Erro: Opcode inválido no decode: %d\n", inst->opcode);
+            printf("Erro: Opcode invalido no decode: %d\n", inst->opcode);
             return ERRO_INSTRUCAO_INVALIDA;
     }
     return 0;
@@ -71,7 +71,7 @@ int execute(Instrucao* inst, int* memoria, int* registradores, int* PC, int* fla
     switch (inst->opcode) {
         case 1: // LOAD
             if (!enderecoValido(inst->arg2)) {
-                printf("Erro: Endereço inválido no LOAD: %d\n", inst->arg2);
+                printf("Erro: Endereço invalido no LOAD: %d\n", inst->arg2);
                 return ERRO_ENDERECO_INVALIDO;
             }
             registradores[inst->arg1] = memoria[inst->arg2];
@@ -79,7 +79,7 @@ int execute(Instrucao* inst, int* memoria, int* registradores, int* PC, int* fla
 
         case 2: // STORE
             if (!enderecoValido(inst->arg2)) {
-                printf("Erro: Endereço inválido no STORE: %d\n", inst->arg2);
+                printf("Erro: Endereço invalido no STORE: %d\n", inst->arg2);
                 return ERRO_ENDERECO_INVALIDO;
             }
             memoria[inst->arg2] = registradores[inst->arg1];
@@ -104,7 +104,7 @@ int execute(Instrucao* inst, int* memoria, int* registradores, int* PC, int* fla
         {
             int novoPC = *PC + 4 * inst->arg1;
             if (novoPC < 0 || novoPC >= TAM_MEMORIA) {
-                printf("Erro: Endereço inválido no JUMP: %d\n", novoPC);
+                printf("Erro: Endereço invalido no JUMP: %d\n", novoPC);
                 return ERRO_ENDERECO_INVALIDO;
             }
             *PC = novoPC;
@@ -115,7 +115,7 @@ int execute(Instrucao* inst, int* memoria, int* registradores, int* PC, int* fla
             return -999; // Código especial para parar execução
 
         default:
-            printf("Erro: Opcode inválido no execute: %d\n", inst->opcode);
+            printf("Erro: Opcode invalido no execute: %d\n", inst->opcode);
             return ERRO_INSTRUCAO_INVALIDA;
     }
     return 0;
