@@ -82,7 +82,7 @@ int execute(Instrucao* inst, int* memoria, int* registradores, int* PC, int* fla
                 printf("Erro: Endereço invalido no STORE: %d\n", inst->arg2);
                 return ERRO_ENDERECO_INVALIDO;
             }
-            memoria[inst->arg2] = registradores[inst->arg1];
+            memoria[inst->arg2 - 1] = registradores[inst->arg1];                //memoria[inst->arg2 - 1] : pos n do vetor está no indice n-1
             break;
 
         case 3: // ADD
@@ -139,6 +139,7 @@ int executarPrograma(int* memoria, int* registradores, int* PC, int* flagZero, i
 
         if (executeStatus == -999) { // HALT
             continuar = FALSE;
+            *PC += 4;
         } else if (executeStatus == 1) {
             // PC já foi atualizado no JUMP, não incrementar
         } else if (executeStatus != 0) {
